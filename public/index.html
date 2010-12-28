@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+	<title>Sass to CSS</title>
+	<script type="text/javascript" src = "jquery.js"></script>
+	<script type="text/javascript" src = "sass2css.js"></script>
+	<link href="sass2css.css" media="all" rel="stylesheet" type="text/css"/> 
+</head>
+<body>
+<h1>Sass to CSS</h1>
+<p>
+See: <a href = "http://sass-lang.com/try.html">Try Online: Sass - Syntactically Awesome Stylesheets</a>
+</p>
+
+<form name = "form1">
+<table>
+	<tr>
+		<th>Source</th>
+		<th width = "10">-></th>
+		<th>Dest</th>
+	</tr>
+	<tr>
+		<td>
+<textarea id = "src" name = "src" cols = "45" rows = "30">
+// Variable Definitions
+
+$page-width: 800px;
+$sidebar-width: 200px;
+$primary-color: #eeeeee;
+
+// Global Attributes
+
+body {
+  font: {
+    family: sans-serif;
+    size: 30em;
+    weight: bold; }; }
+
+// Scoped Styles
+
+#contents {
+  width: $page-width;
+  #sidebar {
+    float: right;
+    width: $sidebar-width; }
+  #main {
+    width: $page-width - $sidebar-width;
+    background: $primary-color;
+    h2 {
+      color: blue; } } }
+
+#footer {
+  height: 200px; }
+</textarea>
+		</td>
+		<td>
+			<p>
+			Syntax: 
+			<select name = "syntax">
+				<option value = "scss" selected>scss
+				<option value = "sass">sass
+			</select>
+			</p>
+
+			<p>
+			Output Style: 
+			<select name = "style">
+				<option value = "nested" selected>nested
+				<option value = "expanded">expanded
+				<option value = "compact">compact
+				<option value = "compressed">compressed
+			</select>
+			</p>
+
+			<p>
+				<input type = "button" value = "Render" id = "render">
+			</p>
+		</td>
+		<td>
+			<textarea id = "dest" name = "dest" cols = "45" rows = "30"></textarea>
+		</td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>
